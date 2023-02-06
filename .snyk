@@ -1,0 +1,13 @@
+ignore:
+  SNYK-JAVA-ORGAPACHELOGGINGLOG4J-2314720:
+  - '*':
+      created: '2023-02-06T13:55:07.268Z'
+      disregardIfFixable: false
+      expires: '2023-02-20T13:55:07.101Z'
+      ignoredBy:
+        email: jordan.miles@snyk.io
+        id: b4a0f9fb-7e7a-44b7-bd54-8c6e5e48c020
+        name: Jordan Miles
+      reason: ''
+      reasonType: not-vulnerable
+version: v1.25.0
