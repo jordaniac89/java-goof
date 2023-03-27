@@ -14,40 +14,53 @@
         <module>log4shell-goof</module>
     </modules>
     <packaging>pom</packaging>
+    <repositories>
+        <repository>
+            <id>test-maven-repo</id>
+            <name>test-maven-repo</name>
+            <url>http://localhost:8081/repository/test-maven-repo/</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>private-package-test</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>io.snyk</groupId>
-                <artifactId>snyk-maven-plugin</artifactId>
-                <version>2.0.0</version>
-                <inherited>false</inherited>
-                <executions>
-                    <execution>
-                        <phase>install</phase>
-                        <id>snyk-test</id>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <phase>test</phase>
-                        <id>snyk-monitor</id>
-                        <goals>
-                            <goal>monitor</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <apiToken>${env.SNYK_TOKEN}</apiToken>
-                    <args>
-                        <arg>--all-projects</arg>
-                    </args>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>io.snyk</groupId>-->
+<!--                <artifactId>snyk-maven-plugin</artifactId>-->
+<!--                <version>2.0.0</version>-->
+<!--                <inherited>false</inherited>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>install</phase>-->
+<!--                        <id>snyk-test</id>-->
+<!--                        <goals>-->
+<!--                            <goal>test</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <phase>test</phase>-->
+<!--                        <id>snyk-monitor</id>-->
+<!--                        <goals>-->
+<!--                            <goal>monitor</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <apiToken>52e64050-759b-4fd4-bab8-5d30e42c16bc</apiToken>-->
+<!--                    <args>-->
+<!--                        <arg>&#45;&#45;all-projects</arg>-->
+<!--                    </args>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
     <licenses>
         <license>
